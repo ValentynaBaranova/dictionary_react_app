@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Dictinary.css";
 
 export default function Dictinary() {
   const [keyword, SetKeyword] = useState("");
+
+  function handalResponse(response) {
+    console.log(response.data[0]);
+  }
+
   function search(event) {
     event.preventDefault();
-    alert(`My word inside input is ${keyword}`);
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    axios.get(apiUrl).then(handalResponse);
   }
 
   function showKeywords(event) {
@@ -16,7 +23,7 @@ export default function Dictinary() {
       <form onSubmit={search}>
         <input
           type="search"
-          class="form-control search"
+          className="form-control search"
           placeholder="Type to search..."
           onChange={showKeywords}
         />
