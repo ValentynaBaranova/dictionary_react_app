@@ -3,6 +3,10 @@ form {
   width: 70%;
 }
 
+.Dictinary {
+  text-align: center;
+}
+
 .search {
   width: 70%;
   float: left;
