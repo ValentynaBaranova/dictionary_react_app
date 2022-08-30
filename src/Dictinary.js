@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import Results from "./Results";
 import axios from "axios";
 import "./Dictinary.css";
 
 export default function Dictinary() {
   const [keyword, SetKeyword] = useState("");
+  const [result, setResult] = useState(null);
 
   function handalResponse(response) {
     console.log(response.data[0]);
+    setResult(response.data[0]);
   }
 
   function search(event) {
@@ -29,6 +32,7 @@ export default function Dictinary() {
         />
         <input type="submit" className="btn btn-primary" />
       </form>
+      <Results results={result} />
     </div>
   );
 }
