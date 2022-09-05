@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Dictinary />
+        <Dictinary defaultKeyword="sunset" />
       </div>
     </div>
   );

@@ -1,21 +1,83 @@
-form {
-  margin: 20px auto;
-  width: 70%;
+:root {
+  --main-color: rgb(2, 205, 219);
+}
+
+h1 {
+  font-size: 48px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px var(--main-color);
 }
 
 .Dictinary {
   text-align: left;
 }
 
-.search {
-  width: 70%;
-  float: left;
+.form-control {
+  font-size: 20px !important;
 }
 
 ul {
+  margin-top: 20px;
   padding: 0;
   list-style-position: inside;
 }
 ul li {
   padding-left: 10px;
+  font-size: 18px;
+}
+
+section {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 5px 5px 10px rgb(167, 167, 167);
+  margin: 20px 0;
+}
+.hint {
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.Phonetic a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: all 200ms ease-in-out;
+}
+
+.Phonetic a:hover {
+  text-decoration: none;
+  color: rgb(4, 120, 129);
+}
+
+.phone_tik {
+  color: gray;
+  margin: 15px;
+}
+.ask {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.definition {
+  font-size: 20px;
+}
+
+.Synonyms li {
+  color: var(--main-color);
+  display: inline-block;
+}
+
+.example {
+  font-size: 18px;
+  opacity: 0.7;
+  margin-bottom: 20px;
 }
