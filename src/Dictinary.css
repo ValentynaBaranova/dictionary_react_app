@@ -4,10 +4,18 @@ form {
 }
 
 .Dictinary {
-  text-align: center;
+  text-align: left;
 }
 
 .search {
   width: 70%;
   float: left;
+}
+
+ul {
+  padding: 0;
+  list-style-position: inside;
+}
+ul li {
+  padding-left: 10px;
 }
