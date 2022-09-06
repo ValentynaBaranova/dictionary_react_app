@@ -58,6 +58,10 @@ section {
   color: rgb(4, 120, 129);
 }
 
+.Phonetic .row {
+  margin: 0 !important;
+}
+
 .phone_tik {
   color: gray;
   margin: 15px;
