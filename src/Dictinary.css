@@ -81,3 +81,16 @@ section {
   opacity: 0.7;
   margin-bottom: 20px;
 }
+
+.block {
+  padding: 10px;
+}
+
+.block img {
+  box-shadow: 3px 3px 7px var(--main-color);
+  transition: all 350ms ease-in-out;
+}
+
+.block img:hover {
+  box-shadow: none;
+}
