@@ -74,6 +74,7 @@ section {
 .Synonyms li {
   color: var(--main-color);
   display: inline-block;
+  font-weight: 700;
 }
 
 .example {
@@ -87,7 +88,8 @@ section {
 }
 
 .block img {
-  box-shadow: 3px 3px 7px var(--main-color);
+  box-shadow: 3px 3px 7px rgb(1, 104, 112);
+  border: 1px solid var(--main-color);
   transition: all 350ms ease-in-out;
 }
 
