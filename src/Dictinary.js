@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Results from "./Results";
+import Pexels from "./Pexels";
 import axios from "axios";
 import "./Dictinary.css";
 
@@ -7,15 +8,28 @@ export default function Dictinary(props) {
   const [keyword, SetKeyword] = useState(props.defaultKeyword);
   const [result, setResult] = useState(null);
   const [loaded, setLoaded] = useState(false);
+  const [photos, setPhotos] = useState(null);
 
   function handalResponse(response) {
-    console.log(response.data[0]);
     setResult(response.data[0]);
+  }
+
+  function handalResponsePexels(response) {
+    setPhotos(response.data.photos);
   }
 
   function search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handalResponse);
+
+    const apiPexelsKey =
+      "563492ad6f91700001000001d516f9fd43464572965473e04ceda33e";
+    let apiPexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+    axios
+      .get(apiPexelsUrl, {
+        headers: { Authorization: `Bearer ${apiPexelsKey}` },
+      })
+      .then(handalResponsePexels);
   }
 
   function handleSubmit(event) {
@@ -51,6 +65,7 @@ export default function Dictinary(props) {
           </div>
         </section>
         <Results results={result} />
+        <Pexels photos={photos} />
       </div>
     );
   } else {
